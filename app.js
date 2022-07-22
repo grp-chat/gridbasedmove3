@@ -272,6 +272,23 @@ class GridSystem {
 
         this.matrix[plyrSlot.y][plyrSlot.x] = plyrSlot.lable;
 
+    }
+    transitionToAnotherArea2(area, plyrSlot) {
+        this.matrix[plyrSlot.y][plyrSlot.x] = 0;
+
+        this.matrix = this.allAreas[area];
+        if (area === "area3") {
+            plyrSlot.y = 1;
+            plyrSlot.x = 28;
+        } else if (area === "area2") {
+            plyrSlot.y = 1;
+            plyrSlot.x = 21;
+        } else if (area === "area1") {
+            plyrSlot.y = 1;
+            plyrSlot.x = 1;
+        }
+        
+        this.matrix[plyrSlot.y][plyrSlot.x] = plyrSlot.lable;
 
     }
 
@@ -537,7 +554,7 @@ io.sockets.on('connection', function (sock) {
 
         const gridSysKey = getPlayerObjectKey(data);
         gridSystem[gridSysKey].area = "area2";
-        gridSystem.transitionToAnotherArea("area2", gridSystem[gridSysKey]);
+        gridSystem.transitionToAnotherArea2("area2", gridSystem[gridSysKey]);
 
         gridSystem.emitToUsers();
         
@@ -546,7 +563,7 @@ io.sockets.on('connection', function (sock) {
 
         const gridSysKey = getPlayerObjectKey(data);
         gridSystem[gridSysKey].area = "area3";
-        gridSystem.transitionToAnotherArea("area3", gridSystem[gridSysKey]);
+        gridSystem.transitionToAnotherArea2("area3", gridSystem[gridSysKey]);
 
         gridSystem.emitToUsers();
         
@@ -556,7 +573,7 @@ io.sockets.on('connection', function (sock) {
 
         const gridSysKey = getPlayerObjectKey(data);
         gridSystem[gridSysKey].area = "mainArea";
-        gridSystem.transitionToAnotherArea("mainArea", gridSystem[gridSysKey]);
+        gridSystem.transitionToAnotherArea2("area1", gridSystem[gridSysKey]);
 
         gridSystem.emitToUsers();
         
