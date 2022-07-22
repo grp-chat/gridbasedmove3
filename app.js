@@ -107,7 +107,7 @@ class GridSystem {
         this.matrix3 = matrix3;
         this.cellSize = 40;
         this.padding = 2;
-        this.startingSteps = 1000;
+        this.startingSteps = 8;
         this.winY = 11;
         this.winX = 37;
         this.walletMax = 1000;
@@ -527,7 +527,7 @@ io.sockets.on('connection', function (sock) {
         gridSystem.playersArr.forEach((player) => {
             if (player.id === data.studentId) {
                 var convertToNum = Number(data.getNum)
-                if (player.steps + convertToNum >= 30) {
+                if (player.steps + convertToNum > 30) {
                     var message = player.id + " steps capacity exceeded! Failed."
                     io.emit('chat-to-clients', message);
                 } else {
