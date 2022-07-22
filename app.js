@@ -283,7 +283,7 @@ class GridSystem {
         } else if (area === "area2") {
             plyrSlot.y = 1;
             plyrSlot.x = 21;
-        } else if (area === "area1") {
+        } else if (area === "mainArea") {
             plyrSlot.y = 1;
             plyrSlot.x = 1;
         }
@@ -573,7 +573,7 @@ io.sockets.on('connection', function (sock) {
 
         const gridSysKey = getPlayerObjectKey(data);
         gridSystem[gridSysKey].area = "mainArea";
-        gridSystem.transitionToAnotherArea2("area1", gridSystem[gridSysKey]);
+        gridSystem.transitionToAnotherArea2("mainArea", gridSystem[gridSysKey]);
 
         gridSystem.emitToUsers();
         

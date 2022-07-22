@@ -265,7 +265,7 @@ const allCommands = [
     new numAndIdCommand("TCR: +", 'addSteps'),
     new fixedCommand("TCR: mind control off", 'mindControlOff'),
     new idCommand("TCR: go a2 ", 'teleportPlayerArea2'),
-    new idCommand("TCR: go main ", 'teleportPlayerMainArea'),
+    new idCommand("TCR: go a1 ", 'teleportPlayerMainArea'),
     new idCommand("TCR: go a3 ", 'teleportPlayerArea3')
     //new fixedCommand("TCR: teleport me out", 'teleportMeOut'),
     //new fixedCommand("TCR: teleport me in", 'teleportMeIn'),
