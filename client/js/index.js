@@ -6,7 +6,7 @@ var player1 = new Image();
 //player1.src = "https://lh3.googleusercontent.com/10PkSlNxU3SMcIQPGEH0Ius_wV1hiRoTtfEQFvaW_YpzdA7aZrd3LxirFvvLc93ulP_-LgVCSV4yjXpNRVNibx9iQtnebU-Vrg62xhHSQhPDAn_nhE6uBYNyoJ1unD9lVp-3ncMlEw=w2400"
 
 //studentsArr = ["TCR", "LXR", "LK", "JHA", "JV", "JL", "SZF", "H"];
-studentsArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY"];
+studentsArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "LEN"];
 elementsArr = [];
 
 studentsArr.forEach((student) => {
@@ -322,10 +322,10 @@ class GridSystemClient {
         this.p8 = { color: "fuchsia", lable: 9, id: this.students[7] };
 
         this.p9 = { color: "white", lable: 10, id: this.students[8] };
-        this.p10 = { color: "lightblue", lable: 10, id: this.students[9] };
+        this.p10 = { color: "lightblue", lable: 11, id: this.students[9] };
 
     
-        this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9];
+        this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9, this.p10];
         this.moveSwitch = 0;
     }
 

@@ -169,11 +169,7 @@ class GridSystem {
             plyrSlot.wallet += 100;
             return true;
         }
-        // if (this.matrix[plyrSlot.y + y][plyrSlot.x + x] === 30) {
-        //     plyrSlot.total += plyrSlot.wallet;
-        //     plyrSlot.wallet = 0;
-        //     return true;
-        // }
+        
         return false;
     }
 
