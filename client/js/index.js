@@ -6,7 +6,7 @@ var player1 = new Image();
 //player1.src = "https://lh3.googleusercontent.com/10PkSlNxU3SMcIQPGEH0Ius_wV1hiRoTtfEQFvaW_YpzdA7aZrd3LxirFvvLc93ulP_-LgVCSV4yjXpNRVNibx9iQtnebU-Vrg62xhHSQhPDAn_nhE6uBYNyoJ1unD9lVp-3ncMlEw=w2400"
 
 //studentsArr = ["TCR", "LXR", "LK", "JHA", "JV", "JL", "SZF", "H"];
-studentsArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX"];
+studentsArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY"];
 elementsArr = [];
 
 studentsArr.forEach((student) => {
