@@ -282,10 +282,10 @@ class GridSystem {
             plyrSlot.x = 28;
         } else if (area === "area2") {
             plyrSlot.y = 1;
-            plyrSlot.x = 21;
+            plyrSlot.x = 26;
         } else if (area === "mainArea") {
-            plyrSlot.y = 1;
-            plyrSlot.x = 1;
+            plyrSlot.y = 0;
+            plyrSlot.x = 0;
         }
         
         this.matrix[plyrSlot.y][plyrSlot.x] = plyrSlot.lable;
