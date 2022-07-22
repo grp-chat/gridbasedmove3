@@ -26,69 +26,118 @@ const getPlayerObjectKey = playerId => {
 }
 
 const gridMatrix = [
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-[1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1],
-[1,0,0,0,1,0,1,1,1,1,1,1,1,1,1,0,0,0,1,0,1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1],
-[1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,0,1],
-[1,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,0,0,0,1,0,1,1,1,1,1,1,0,0,1,0,1,0,0,1,0,0,1,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,0,1,1,0,1,1,0,1,1,1,0,1,0,1,0,1,0,0,1,1,1,1,1,1,1,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1],
-[1,0,0,1,1,1,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,1,1,1,1,0,1,1,0,0,1,0,0,0,0,1,0,1],
-[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1],
-[1,0,0,0,1,1,0,1,1,0,1,1,1,0,1,0,1,0,1,0,0,1,1,1,1,1,1,1,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,1,1,1,1,0,1,0,0,0,0,0,0,0,1,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,0,0,0,1,0,1,1,1,1,1,1,0,0,1,0,1,0,0,1,0,0,1,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,1,0,0,1,0,1],
-[1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,1,0,1],
-[1,0,0,0,1,0,1,1,1,1,1,1,1,1,1,0,0,0,1,0,1,1,1,1,1,1,0,1,1,0,0,0,1,0,0,1,0,1],
-[1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1],
-[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,0,0,0,1,0,0,20,0,0,20,0,0,20,0,0,20,0,20,0,0,0,20,0,0,20,0,0,0,0,1,20,20,20,20,1],
+    [1,0,0,0,1,0,20,1,0,0,1,1,1,20,1,1,1,1,1,20,0,1,1,1,20,1,0,1,20,0,20,20,20,20,20,1],
+    [1,0,0,0,1,0,1,20,1,0,0,20,0,1,20,20,20,20,20,20,1,20,20,0,1,20,20,20,1,0,1,20,20,20,20,1],
+    [1,0,1,1,20,0,1,20,1,0,20,1,20,1,20,20,20,1,1,1,20,20,20,20,1,20,20,20,1,0,0,1,1,1,20,1],
+    [1,0,0,0,0,20,1,20,1,20,0,1,0,1,20,20,1,20,20,20,20,1,20,20,1,20,20,20,1,20,1,20,20,20,20,1],
+    [1,0,1,1,20,1,0,20,0,0,20,1,20,20,1,1,20,20,1,1,1,20,20,20,1,20,20,20,1,0,1,20,20,20,20,1],
+    [1,0,0,20,1,0,20,0,20,1,20,0,0,1,20,20,20,1,20,20,20,1,20,20,20,20,20,20,1,0,20,1,20,1,20,1],
+    [1,0,0,0,1,20,0,20,0,20,1,20,20,1,20,1,1,20,20,20,20,20,1,1,1,1,1,1,20,0,0,20,1,20,20,1],
+    [1,0,0,0,0,0,20,0,20,0,1,0,0,1,20,20,20,1,20,20,20,20,20,20,20,20,20,20,20,1,0,0,1,20,20,1],
+    [1,0,0,0,0,20,0,20,0,20,20,1,20,1,20,20,20,0,1,20,20,1,20,1,20,1,20,1,20,20,1,0,20,20,0,1],
+    [1,0,0,0,0,0,20,0,20,0,1,0,0,1,20,20,20,1,20,20,20,20,20,20,20,20,20,20,20,1,0,0,1,20,20,1],
+    [1,0,0,0,1,20,0,20,0,20,1,20,20,1,20,1,1,20,20,20,20,20,1,1,1,1,1,1,20,0,0,20,1,20,20,1],
+    [1,0,0,20,1,0,20,0,20,1,20,0,0,1,20,20,20,1,20,20,20,1,20,20,20,20,20,20,1,0,20,1,20,1,20,1],
+    [1,0,1,1,20,1,0,20,0,0,20,1,20,20,1,1,20,20,1,1,1,20,20,20,1,20,20,20,1,0,1,20,20,20,20,1],
+    [1,0,0,0,0,20,1,20,1,20,0,1,0,1,20,20,1,20,20,20,20,1,20,20,1,20,20,20,1,20,1,20,20,20,20,1],
+    [1,0,1,1,20,0,1,20,1,0,20,1,20,1,20,20,20,1,1,1,20,20,20,20,1,20,20,20,1,0,0,1,1,1,20,1],
+    [1,0,0,0,1,0,1,20,1,0,0,20,0,1,20,20,20,20,20,20,1,20,20,0,1,20,20,20,1,0,1,20,20,20,20,1],
+    [1,0,0,0,1,0,20,1,0,0,1,1,1,20,1,1,1,1,1,20,0,1,1,1,20,1,0,1,20,0,20,20,20,20,20,1],
+    [1,0,0,0,1,0,0,20,0,0,20,0,0,20,0,0,20,0,20,0,0,0,20,0,0,20,0,0,0,0,1,20,20,20,20,1],
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+            
     ];
 
 const gridMatrix2 = [
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0],
+    [1,20,0,0,20,20,20,20,20,20,20,20,1,0,1,20,20,20,20,0,0,0,0,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,1,1,1,1,1,1,1,1,20,1,20,20,20,20,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,20,20,20,20,1,20,20,20,20,0,0,0,0,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,1,1,1,1,1,1,1,20,1,1,1,1,1,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,20,20,1,20,20,20,20,20,20,20,0,0,0,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,1,1,1,1,1,1,20,1,1,1,1,1,1,1,1,1,1,20,0,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,20,20,1,20,20,20,1,20,20,20,1,0,0,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,20,20,1,20,1,20,1,20,1,20,1,0,20,0,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,20,20,1,20,1,20,1,20,1,20,1,0,0,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,0,20,1,20,1,20,1,20,1,20,1,0,0,20,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,1,1,1,1,1,1,20,1,20,1,20,1,20,1,20,1,0,0,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,20,20,1,20,1,20,1,20,1,20,1,1,1,20,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,1,1,1,1,1,1,1,20,1,20,1,20,1,20,1,0,1,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,20,20,20,20,20,20,20,1,20,20,20,1,20,0,0,0,20,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,20,0,20,0,20,0,20,0,20,0,0,20,1,0,0,0,0,0,0,0,0,20,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,20,0,20,0,20,0,20,0,20,1,0,1,0,0,0,0,0,0,0,0],
+    [1,20,0,20,0,20,0,20,0,20,0,20,1,20,0,20,0,20,0,20,0,20,0,20,0,1,0,1,0,0,0,0,0,0,0,0],
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]
+                
+];
 
+const gridMatrix3 = [
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0],
+    [1,20,0,0,0,20,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,1,0,1,0,0,0,0,0,0],
+    [1,0,0,20,0,0,0,20,0,0,0,20,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0],
+    [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,20,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0],
+    [1,0,0,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,20,0,0,1,0,1,0,0,0,0,0,0],
+    [1,20,0,0,1,20,20,20,0,20,0,1,0,1,1,0,1,20,0,20,0,20,20,1,0,0,20,1,0,1,0,0,0,0,0,0],
+    [1,0,20,0,1,20,20,0,20,0,20,1,0,1,1,0,1,0,20,0,20,20,20,1,0,20,0,1,0,1,0,0,0,0,0,0],
+    [1,0,0,20,1,20,20,20,0,20,0,1,0,1,1,0,1,20,0,20,0,20,20,1,20,0,0,1,0,1,0,0,0,0,0,0],
+    [1,0,20,0,1,20,20,0,20,0,20,0,0,0,0,0,0,0,20,0,20,20,20,1,0,20,0,1,0,1,0,0,0,0,0,0],
+    [1,20,0,0,1,20,20,20,0,20,0,0,0,0,0,0,0,20,0,20,0,20,20,1,0,0,20,1,0,1,0,0,0,0,0,0],
+    [1,0,20,0,1,20,20,0,20,0,20,1,0,1,1,0,1,0,20,0,20,20,20,1,0,20,0,1,0,1,0,0,0,0,0,0],
+    [1,0,0,20,1,20,20,20,0,20,0,1,0,1,1,0,1,20,0,20,0,20,20,1,20,0,0,1,0,1,0,0,0,0,0,0],
+    [1,0,0,0,1,20,20,0,20,0,20,1,0,1,1,0,1,0,20,0,20,20,20,1,0,0,20,1,0,1,0,0,0,0,0,0],
+    [1,0,0,0,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0],
+    [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,20,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0],
+    [1,0,0,20,0,0,0,20,0,0,0,20,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0],
+    [1,20,0,0,0,20,0,0,0,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,1,0,1,0,0,0,0,0,0],
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0]
+                
 ];
 
 
+//##############################################################################################################
+
 class GridSystem {
-    constructor(matrix, matrix2) {
+    constructor(matrix, matrix2, matrix3) {
         this.matrix = matrix;
         this.matrixMain = matrix;
         this.matrix2 = matrix2;
+        this.matrix3 = matrix3;
         this.cellSize = 40;
         this.padding = 2;
-        this.startingSteps = 0;
+        this.startingSteps = 300;
         this.winY = 11;
         this.winX = 37;
+        this.walletMax = 1000;
+        this.allAreas = {
+            "mainArea": this.matrixMain,
+            "area2": this.matrix2,
+            "mainArea2": this.matrixMain,
+            "area3": this.matrix3
+        }
+        this.entrances = {
+            "mainArea": { x: 29, y: 2},
+            "area2": { x: 2, y: 3},
+            "mainArea2": {x: 29, y: 18},
+            "area3": {x: 25, y: 15}
+        }
 
         this.extraArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY"];
 
-        this.p1 = { x: 2, y: 2, lable: 2, id: this.extraArr[0], steps: 1000, area: "area2" };
+        this.p1 = { x: 2, y: 2, lable: 2, id: this.extraArr[0], steps: 1000, area: "area2", wallet: 0, total: 0 };
 
-        this.p2 = { x: 3, y: 1, lable: 3, id: this.extraArr[1], steps: this.startingSteps, area: "mainArea" };
-        this.p3 = { x: 1, y: 1, lable: 4, id: this.extraArr[2], steps: this.startingSteps, area: "mainArea" };
-        this.p4 = { x: 3, y: 3, lable: 5, id: this.extraArr[3], steps: this.startingSteps, area: "mainArea" };
-        this.p5 = { x: 3, y: 2, lable: 6, id: this.extraArr[4], steps: this.startingSteps, area: "mainArea" };
+        this.p2 = { x: 3, y: 1, lable: 3, id: this.extraArr[1], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p3 = { x: 1, y: 1, lable: 4, id: this.extraArr[2], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p4 = { x: 3, y: 3, lable: 5, id: this.extraArr[3], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p5 = { x: 3, y: 2, lable: 6, id: this.extraArr[4], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
 
-        this.p6 = { x: 3, y: 19, lable: 7, id: this.extraArr[5], steps: this.startingSteps, area: "mainArea" };
-        this.p7 = { x: 3, y: 18, lable: 8, id: this.extraArr[6], steps: this.startingSteps, area: "mainArea" };
-        this.p8 = { x: 1, y: 19, lable: 9, id: this.extraArr[7], steps: this.startingSteps, area: "mainArea" };
-        this.p9 = { x: 2, y: 12, lable: 10, id: this.extraArr[8], steps: this.startingSteps, area: "mainArea" };
+        this.p6 = { x: 3, y: 19, lable: 7, id: this.extraArr[5], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p7 = { x: 3, y: 18, lable: 8, id: this.extraArr[6], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p8 = { x: 1, y: 19, lable: 9, id: this.extraArr[7], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p9 = { x: 2, y: 12, lable: 10, id: this.extraArr[8], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+
         
         this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9];
 
@@ -101,27 +150,54 @@ class GridSystem {
     }
 
     #startingPoint(plyrSlot) {
-        if(plyrSlot.area === "area2") {
-            this.matrix = this.matrix2;
-        } else {
-            this.matrix = this.matrixMain;
-        }
+
+        this.matrix = this.allAreas[plyrSlot.area];
 
         this.matrix[plyrSlot.y][plyrSlot.x] = plyrSlot.lable;
         
     }
 
     #isValidMove(plyrSlot, x, y) {
-        if(plyrSlot.area === "area2") {
-            this.matrix = this.matrix2;
-        } else {
-            this.matrix = this.matrixMain;
-        }
+
+        this.matrix = this.allAreas[plyrSlot.area];
 
         if (this.matrix[plyrSlot.y + y][plyrSlot.x + x] === 0) {
             return true;
         }
+        if (this.matrix[plyrSlot.y + y][plyrSlot.x + x] === 20 && plyrSlot.wallet < this.walletMax) {
+            plyrSlot.wallet += 100;
+            return true;
+        }
+        // if (this.matrix[plyrSlot.y + y][plyrSlot.x + x] === 30) {
+        //     plyrSlot.total += plyrSlot.wallet;
+        //     plyrSlot.wallet = 0;
+        //     return true;
+        // }
         return false;
+    }
+
+    
+    #updPosition(keyCode, plyrSlot) {
+        this.matrix = this.allAreas[plyrSlot.area];
+
+        if (keyCode === 37) {
+            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
+            this.matrix[plyrSlot.y][plyrSlot.x - 1] = plyrSlot.lable;
+            plyrSlot.x--;
+        } else if (keyCode === 39) {
+            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
+            this.matrix[plyrSlot.y][plyrSlot.x + 1] = plyrSlot.lable;
+            plyrSlot.x++;
+        } else if (keyCode === 38) {
+            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
+            this.matrix[plyrSlot.y - 1][plyrSlot.x] = plyrSlot.lable;
+            plyrSlot.y--;
+        } else if (keyCode === 40) {
+            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
+            this.matrix[plyrSlot.y + 1][plyrSlot.x] = plyrSlot.lable;
+            plyrSlot.y++;
+        }
+
     }
 
     movePlayer(keyCode, plyrSlot) {
@@ -151,47 +227,64 @@ class GridSystem {
             }
 
         }
+        this.playersArr.forEach((player) => {
+
+            //this.allAreas[player.area][this.entrances[player.area].y][this.entrances[player.area].x] = player.lable
+
+            if (player.y === this.entrances["area2"].y && 
+                player.x === this.entrances["area2"].x && 
+                player.area === "area2") {
+
+                    this.matrix2[this.entrances[player.area].y][this.entrances[player.area].x] = player.lable;
+            }
+            
+            if (player.y === this.entrances["mainArea"].y && 
+                player.x === this.entrances["mainArea"].x && 
+                (player.area === "mainArea" || player.area === "mainArea2")) {
+
+                    //console.log("here is the error")
+                    //this.matrixMain[2][17] = player.lable
+                    this.matrixMain[this.entrances["mainArea"].y][this.entrances["mainArea"].x] = player.lable;
+            }
+
+            if (player.y === this.entrances["mainArea2"].y &&
+                 player.x === this.entrances["mainArea2"].x && 
+                 (player.area === "mainArea" || player.area === "mainArea2")) {
+
+                    
+                    this.matrixMain[this.entrances["mainArea2"].y][this.entrances["mainArea2"].x] = player.lable;
+            }
+            if (player.y === this.entrances["area3"].y && 
+                player.x === this.entrances["area3"].x && 
+                player.area === "area3") {
+
+                    //this.matrix3[3][3] = player.lable
+                    this.matrix3[this.entrances["area3"].y][this.entrances["area3"].x] = player.lable;
+
+            }
+        });
     }
 
-    #updPosition(keyCode, plyrSlot) {
-        if(plyrSlot.area === "area2") {
-            this.matrix = this.matrix2;
-        } else {
-            this.matrix = this.matrixMain;
-        }
 
-        if (keyCode === 37) {
-            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
-            this.matrix[plyrSlot.y][plyrSlot.x - 1] = plyrSlot.lable;
-            plyrSlot.x--;
-        } else if (keyCode === 39) {
-            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
-            this.matrix[plyrSlot.y][plyrSlot.x + 1] = plyrSlot.lable;
-            plyrSlot.x++;
-        } else if (keyCode === 38) {
-            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
-            this.matrix[plyrSlot.y - 1][plyrSlot.x] = plyrSlot.lable;
-            plyrSlot.y--;
-        } else if (keyCode === 40) {
-            this.matrix[plyrSlot.y][plyrSlot.x] = 0;
-            this.matrix[plyrSlot.y + 1][plyrSlot.x] = plyrSlot.lable;
-            plyrSlot.y++;
-        }
+    transitionToAnotherArea(area, plyrSlot) {
+        this.matrix[plyrSlot.y][plyrSlot.x] = 0;
+
+        this.matrix = this.allAreas[plyrSlot.area];
+        plyrSlot.y = this.entrances[plyrSlot.area].y;
+        plyrSlot.x = this.entrances[plyrSlot.area].x;
+
+        this.matrix[plyrSlot.y][plyrSlot.x] = plyrSlot.lable;
+
 
     }
 
-    emitToUsers(nickname) {
-
-        const gridSysKey = getPlayerObjectKey(nickname);
-
-        if (this[gridSysKey].area === "area2") {
-            var gridMatrix = gridMatrix2;
-            sock.emit('sendMatrix', { gridMatrix, playersArr });
-        } else {
-            var gridMatrix = gridSystem.matrixMain
-            sock.emit('sendMatrix', { gridMatrix, playersArr });
-        }
-        
+    emitToUsers() {
+        var sendGridMatrix1 = this.matrixMain;
+        var sendGridMatrix2 = this.matrix2;
+        var sendGridMatrix3 = this.matrix3;
+        var playersArr = this.playersArr;
+                
+        io.emit('sendMatrix', { sendGridMatrix1, sendGridMatrix2, sendGridMatrix3, playersArr });
     }
 
     test() {
@@ -225,7 +318,35 @@ class GridSystem {
 
 }
 
-const gridSystem = new GridSystem(gridMatrix, gridMatrix2);
+//##############################################################################################################
+
+
+const gridSystem = new GridSystem(gridMatrix, gridMatrix2, gridMatrix3);
+
+cdm = {
+    area1: [{x:2,y:10},{x:17,y:10},{x:20,y:2},{x:20,y:18},{x:23,y:3},{x:23,y:17},{x:30,y:4},{x:30,y:16},{x:34,y:10}],
+    area2: [{x:1,y:8},{x:10,y:10},{x:13,y:1},{x:21,y:13}],
+    area3: {x:16,y:2}
+}
+
+
+// var nickname = "TCR"
+// const obj = {
+//     "area2": {
+//         "area2": {
+//             [nickname]: {
+//                 init: function () {this.run();},
+//                 run: function () {console.log("Yes OK")}
+//             }
+// }
+//     },
+    
+    
+// }
+
+// var peri1 = "area2"
+// var peri2 = "area2"
+// obj[peri1][peri2][nickname].run();
 
 
 
@@ -233,10 +354,9 @@ const gridSystem = new GridSystem(gridMatrix, gridMatrix2);
 //const theKey = getPlayerObject("TCR")
 
 
-
-
 var mindControlMode = false;
 var mindControlledStudent = "";
+
 
 
 io.sockets.on('connection', function (sock) {
@@ -244,19 +364,15 @@ io.sockets.on('connection', function (sock) {
     sock.on('newuser', (data) => {
 
         sock.id = data; //"TCR"
-        var playersArr = gridSystem.playersArr;
+        const playersArr = gridSystem.playersArr;
 
         const gridSysKey = getPlayerObjectKey(sock.id);
-        if (gridSystem[gridSysKey].area === "area2") {
-            var gridMatrix = gridMatrix2;
-            var area = "0";
-            sock.emit('sendMatrix', { gridMatrix, playersArr, area });
-        } else {
-            var gridMatrix = gridSystem.matrixMain;
-            var area = "0";
-            sock.emit('sendMatrix', { gridMatrix, playersArr, area });
-        }
 
+        var sendGridMatrix1 = gridSystem.matrixMain;
+        var sendGridMatrix2 = gridSystem.matrix2;
+        var sendGridMatrix3 = gridSystem.matrix3;
+        sock.emit('loadMatrix', { sendGridMatrix1, sendGridMatrix2, sendGridMatrix3, playersArr });
+       
         // gridSystem.playersArr.forEach((player) => {
 
         //     if (player.id === sock.id) {
@@ -277,17 +393,89 @@ io.sockets.on('connection', function (sock) {
             if (mindControlMode === false) {
 
                 if (gridSystem[gridSysKey].steps <= 0) {return}
+
                 gridSystem.movePlayer(data, gridSystem[gridSysKey]);
-                var area = gridSystem[gridSysKey].area;
-                io.emit('sendMatrix', { gridMatrix, playersArr, area });
+
+//DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========
+
+                if (gridSystem[gridSysKey].x === 1 && gridSystem[gridSysKey].y === 3 
+                    && gridSystem[gridSysKey].area === "area2") {
+
+                        gridSystem[gridSysKey].area = "mainArea";
+                        gridSystem.transitionToAnotherArea("mainArea", gridSystem[gridSysKey]);
+
+                        gridSystem.emitToUsers();
+                }
+                if (gridSystem[gridSysKey].x === 29 && gridSystem[gridSysKey].y === 1 
+                    && (gridSystem[gridSysKey].area === "mainArea" ||
+                    gridSystem[gridSysKey].area === "mainArea2")) {
+
+                        gridSystem[gridSysKey].area = "area2";
+                        gridSystem.transitionToAnotherArea("area2", gridSystem[gridSysKey]);
+
+                        gridSystem.emitToUsers();
+                }
+                if (gridSystem[gridSysKey].x === 29 && gridSystem[gridSysKey].y === 19 
+                    && (gridSystem[gridSysKey].area === "mainArea" ||
+                    gridSystem[gridSysKey].area === "mainArea2")) {
+
+                        gridSystem[gridSysKey].area = "area3";
+                        gridSystem.transitionToAnotherArea("area3", gridSystem[gridSysKey]);
+
+                        gridSystem.emitToUsers();
+                }
+                if (gridSystem[gridSysKey].x === 24 && gridSystem[gridSysKey].y === 15 
+                    && gridSystem[gridSysKey].area === "area3") {
+
+                        gridSystem[gridSysKey].area = "mainArea2";
+                        gridSystem.transitionToAnotherArea("mainArea2", gridSystem[gridSysKey]);
+
+                        gridSystem.emitToUsers();
+                }
+//DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========DOOR========
+
+//CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========
+                cdm.area1.forEach((coordinate) => {
+                    if (gridSystem[gridSysKey].x === coordinate.x && gridSystem[gridSysKey].y === coordinate.y 
+                        && (gridSystem[gridSysKey].area === "mainArea"||gridSystem[gridSysKey].area === "mainArea2")) {
+                        
+                            gridSystem[gridSysKey].total += gridSystem[gridSysKey].wallet;
+                            gridSystem[gridSysKey].wallet = 0;
+
+                            gridSystem.emitToUsers();
+                    }
+                });
+                cdm.area2.forEach((coordinate) => {
+                    if (gridSystem[gridSysKey].x === coordinate.x && gridSystem[gridSysKey].y === coordinate.y 
+                        && gridSystem[gridSysKey].area === "area2") {
+                        
+                            gridSystem[gridSysKey].total += gridSystem[gridSysKey].wallet;
+                            gridSystem[gridSysKey].wallet = 0;
+                        
+                            gridSystem.emitToUsers();
+                    }
+                });
+
+                if (gridSystem[gridSysKey].x === cdm.area3.x && gridSystem[gridSysKey].y === cdm.area3.y 
+                    && gridSystem[gridSysKey].area === "area3") {
+                    
+                        gridSystem[gridSysKey].total += gridSystem[gridSysKey].wallet;
+                        gridSystem[gridSysKey].wallet = 0;
+                    
+                        gridSystem.emitToUsers();
+                }
+//CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========CDM=========
+
+                gridSystem.emitToUsers();
+
 
             } else if (mindControlMode === true && sock.id === "TCR") {
 
                 const newGridSysKey = getPlayerObjectKey(mindControlledStudent);
                 if (gridSystem[newGridSysKey].steps <= 0) {return}
                 gridSystem.movePlayer(data, gridSystem[newGridSysKey]);
-                var area = gridSystem[newGridSysKey].area;
-                io.emit('sendMatrix', { gridMatrix, playersArr, area });
+
+                gridSystem.emitToUsers();
 
             }
             
@@ -321,11 +509,11 @@ io.sockets.on('connection', function (sock) {
     });
 
     sock.on('addSteps', (data) => {
-        var playersArr = gridSystem.playersArr;
+        
         gridSystem.playersArr.forEach((player) => {
             if (player.id === data.studentId) {
                 var convertToNum = Number(data.getNum)
-                if (player.steps + convertToNum > 30) {
+                if (player.steps + convertToNum >= 30) {
                     var message = player.id + " steps capacity exceeded! Failed."
                     io.emit('chat-to-clients', message);
                 } else {
@@ -333,7 +521,8 @@ io.sockets.on('connection', function (sock) {
                     player.steps += convertToNum;
                     io.emit('chat-to-clients', message2);
                 }
-                io.emit('sendMatrix', { gridMatrix, playersArr });
+
+                gridSystem.emitToUsers();
             }
         });
     });
@@ -345,6 +534,35 @@ io.sockets.on('connection', function (sock) {
     sock.on('mindControlOff', () => {
         mindControlledStudent = "";
         mindControlMode = false;
+    });
+
+    sock.on('teleportPlayerArea2', (data) => {
+
+        const gridSysKey = getPlayerObjectKey(data);
+        gridSystem[gridSysKey].area = "area2";
+        gridSystem.transitionToAnotherArea("area2", gridSystem[gridSysKey]);
+
+        gridSystem.emitToUsers();
+        
+    });
+    sock.on('teleportPlayerArea3', (data) => {
+
+        const gridSysKey = getPlayerObjectKey(data);
+        gridSystem[gridSysKey].area = "area3";
+        gridSystem.transitionToAnotherArea("area3", gridSystem[gridSysKey]);
+
+        gridSystem.emitToUsers();
+        
+    });
+
+    sock.on('teleportPlayerMainArea', (data) => {
+
+        const gridSysKey = getPlayerObjectKey(data);
+        gridSystem[gridSysKey].area = "mainArea";
+        gridSystem.transitionToAnotherArea("mainArea", gridSystem[gridSysKey]);
+
+        gridSystem.emitToUsers();
+        
     });
 
     sock.on('chat-to-server', (data) => {

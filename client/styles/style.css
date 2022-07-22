@@ -8,7 +8,8 @@ body {
     border: 1px solid white;
     color: wheat;
     position: absolute;
-    left: 1130px;
+    left: 1065px;
+    font-size: 12px;
 }
 
 .chat {
@@ -18,5 +19,5 @@ body {
     color: wheat;
     position: absolute;
     top: 280px;
-    left: 1130px;
+    left: 1065px;
 }
