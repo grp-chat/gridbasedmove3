@@ -24,6 +24,7 @@ const promptMsg = () => {
 
     const studentLogins = {
         teacher: {pinNumber:'8', nickname: 'TCR'},
+        len: {pinNumber:'1502', nickname: 'LEN'},
 
         sat2pmStudent1: {pinNumber:'9852', nickname: 'LK'},
         sat2pmStudent2: {pinNumber:'9035', nickname: 'LXR'},
@@ -301,7 +302,7 @@ class GridSystemClient {
         //this.topContext = this.#getContext(0, 0, "#111", true);
         this.cellSize = 27;
         this.padding = 2;
-        this.students = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY"];
+        this.students = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "LEN"];
         
         this.cdm = {
             area1: [{x:2,y:10},{x:17,y:10},{x:20,y:2},{x:20,y:18},{x:23,y:3},{x:23,y:17},{x:30,y:4},{x:30,y:16},{x:34,y:10}],
@@ -321,6 +322,7 @@ class GridSystemClient {
         this.p8 = { color: "fuchsia", lable: 9, id: this.students[7] };
 
         this.p9 = { color: "white", lable: 10, id: this.students[8] };
+        this.p10 = { color: "lightblue", lable: 10, id: this.students[9] };
 
     
         this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9];

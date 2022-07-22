@@ -124,7 +124,7 @@ class GridSystem {
             "area3": {x: 25, y: 15}
         }
 
-        this.extraArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY"];
+        this.extraArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "LEN"];
 
         this.p1 = { x: 2, y: 2, lable: 2, id: this.extraArr[0], steps: 1000, area: "area2", wallet: 0, total: 0 };
 
@@ -137,9 +137,10 @@ class GridSystem {
         this.p7 = { x: 3, y: 18, lable: 8, id: this.extraArr[6], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
         this.p8 = { x: 1, y: 19, lable: 9, id: this.extraArr[7], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
         this.p9 = { x: 2, y: 12, lable: 10, id: this.extraArr[8], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p10 = { x: 2, y: 11, lable: 11, id: this.extraArr[9], steps: 3000, area: "mainArea", wallet: 0, total: 0 };
 
         
-        this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9];
+        this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9, this.p10];
 
         this.playersArr.forEach((player) => {
             this.#startingPoint(player);
