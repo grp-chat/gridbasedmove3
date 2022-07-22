@@ -126,10 +126,10 @@ class GridSystem {
 
         this.extraArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "LEN"];
 
-        this.p1 = { x: 2, y: 2, lable: 2, id: this.extraArr[0], steps: 1000, area: "area2", wallet: 0, total: 0 };
+        this.p1 = { x: 1, y: 1, lable: 2, id: this.extraArr[0], steps: 1000, area: "mainArea", wallet: 0, total: 0 };
 
         this.p2 = { x: 3, y: 1, lable: 3, id: this.extraArr[1], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
-        this.p3 = { x: 1, y: 1, lable: 4, id: this.extraArr[2], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p3 = { x: 2, y: 1, lable: 4, id: this.extraArr[2], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
         this.p4 = { x: 3, y: 3, lable: 5, id: this.extraArr[3], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
         this.p5 = { x: 3, y: 2, lable: 6, id: this.extraArr[4], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
 
@@ -284,8 +284,8 @@ class GridSystem {
             plyrSlot.y = 1;
             plyrSlot.x = 26;
         } else if (area === "mainArea") {
-            plyrSlot.y = 0;
-            plyrSlot.x = 0;
+            plyrSlot.y = 1;
+            plyrSlot.x = 1;
         }
         
         this.matrix[plyrSlot.y][plyrSlot.x] = plyrSlot.lable;
