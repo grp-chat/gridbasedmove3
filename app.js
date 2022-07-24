@@ -124,20 +124,20 @@ class GridSystem {
             "area3": {x: 25, y: 15}
         }
 
-        this.extraArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "LEN"];
+        this.extraArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "CED"];
 
         this.p1 = { x: 1, y: 1, lable: 2, id: this.extraArr[0], steps: 1000, area: "mainArea", wallet: 0, total: 0 };
 
         this.p2 = { x: 3, y: 1, lable: 3, id: this.extraArr[1], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
-        this.p3 = { x: 2, y: 1, lable: 4, id: this.extraArr[2], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
-        this.p4 = { x: 3, y: 3, lable: 5, id: this.extraArr[3], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p3 = { x: 1, y: 19, lable: 4, id: this.extraArr[2], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p4 = { x: 2, y: 9, lable: 5, id: this.extraArr[3], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
         this.p5 = { x: 3, y: 2, lable: 6, id: this.extraArr[4], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
 
-        this.p6 = { x: 3, y: 19, lable: 7, id: this.extraArr[5], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p6 = { x: 3, y: 3, lable: 7, id: this.extraArr[5], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
         this.p7 = { x: 3, y: 18, lable: 8, id: this.extraArr[6], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
-        this.p8 = { x: 1, y: 19, lable: 9, id: this.extraArr[7], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
-        this.p9 = { x: 2, y: 12, lable: 10, id: this.extraArr[8], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
-        this.p10 = { x: 2, y: 11, lable: 11, id: this.extraArr[9], steps: 3000, area: "mainArea", wallet: 0, total: 0 };
+        this.p8 = { x: 2, y: 11, lable: 9, id: this.extraArr[7], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p9 = { x: 3, y: 19, lable: 10, id: this.extraArr[8], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
+        this.p10 = { x: 3, y: 17, lable: 11, id: this.extraArr[9], steps: this.startingSteps, area: "mainArea", wallet: 0, total: 0 };
 
         
         this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9, this.p10];
@@ -527,7 +527,7 @@ io.sockets.on('connection', function (sock) {
         gridSystem.playersArr.forEach((player) => {
             if (player.id === data.studentId) {
                 var convertToNum = Number(data.getNum)
-                if (player.steps + convertToNum > 30) {
+                if (player.steps + convertToNum > 45) {
                     var message = player.id + " steps capacity exceeded! Failed."
                     io.emit('chat-to-clients', message);
                 } else {

@@ -6,7 +6,7 @@ var player1 = new Image();
 //player1.src = "https://lh3.googleusercontent.com/10PkSlNxU3SMcIQPGEH0Ius_wV1hiRoTtfEQFvaW_YpzdA7aZrd3LxirFvvLc93ulP_-LgVCSV4yjXpNRVNibx9iQtnebU-Vrg62xhHSQhPDAn_nhE6uBYNyoJ1unD9lVp-3ncMlEw=w2400"
 
 //studentsArr = ["TCR", "LXR", "LK", "JHA", "JV", "JL", "SZF", "H"];
-studentsArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "LEN"];
+studentsArr = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "CED"];
 elementsArr = [];
 
 studentsArr.forEach((student) => {
@@ -49,7 +49,7 @@ const promptMsg = () => {
         sun230pmStudent3: {pinNumber:'7051', nickname: "KN"},
         sun230pmStudent4: {pinNumber:'4162', nickname: "JT"},
         sun230pmStudent5: {pinNumber:'2105', nickname: "CJH"},
-        sun230pmStudent6: {pinNumber:'1529', nickname: "LSH"},
+        sun230pmStudent6: {pinNumber:'5086', nickname: "CED"},
         sun230pmStudent7: {pinNumber:'2167', nickname: "KX"},
         sun230pmStudent8: {pinNumber:'6588', nickname: "TJY"}
     }
@@ -303,7 +303,7 @@ class GridSystemClient {
         //this.topContext = this.#getContext(0, 0, "#111", true);
         this.cellSize = 27;
         this.padding = 2;
-        this.students = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "LEN"];
+        this.students = ["TCR", "LOK", "KSY", "KN", "JT", "CJH", "LSH", "KX", "TJY", "CED"];
         
         this.cdm = {
             area1: [{x:2,y:10},{x:17,y:10},{x:20,y:2},{x:20,y:18},{x:23,y:3},{x:23,y:17},{x:30,y:4},{x:30,y:16},{x:34,y:10}],
@@ -316,14 +316,14 @@ class GridSystemClient {
         this.p2 = { color: "cyan", lable: 3, id: this.students[1] };
         this.p3 = { color: "orange", lable: 4, id: this.students[2] };
         this.p4 = { color: "pink", lable: 5, id: this.students[3] };
-        this.p5 = { color: "lightyellow", lable: 6, id: this.students[4] };
+        this.p5 = { color: "darkkhaki", lable: 6, id: this.students[4] };
 
         this.p6 = { color: "royalblue", lable: 7, id: this.students[5] };
         this.p7 = { color: "yellow", lable: 8, id: this.students[6] };
         this.p8 = { color: "fuchsia", lable: 9, id: this.students[7] };
 
-        this.p9 = { color: "white", lable: 10, id: this.students[8] };
-        this.p10 = { color: "lightblue", lable: 11, id: this.students[9] };
+        this.p9 = { color: "slategrey", lable: 10, id: this.students[8] };
+        this.p10 = { color: "white", lable: 11, id: this.students[9] };
 
     
         this.playersArr = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9, this.p10];
@@ -509,7 +509,7 @@ sock.on('loadMatrix', (data) => {
 
     var i = 0;
     elementsArr.forEach((element) => {
-        element.innerHTML = data.playersArr[i].id + " Stps: " + data.playersArr[i].steps + "/30 || Wllt: " + data.playersArr[i].wallet + "/1000 || Ttl: " + data.playersArr[i].total;
+        element.innerHTML = data.playersArr[i].id + " Stps: " + data.playersArr[i].steps + "/45 || Wllt: " + data.playersArr[i].wallet + "/1000 || Ttl: " + data.playersArr[i].total;
 
 
         if (data.playersArr[i].area === "mainArea" && data.playersArr[i].id === nickname) {
@@ -544,7 +544,7 @@ sock.on('sendMatrix', (data) => {
 
     var i = 0;
     elementsArr.forEach((element) => {
-        element.innerHTML = data.playersArr[i].id + " Stps: " + data.playersArr[i].steps + "/30 || Wllt: " + data.playersArr[i].wallet + "/1000 || Ttl: " + data.playersArr[i].total;
+        element.innerHTML = data.playersArr[i].id + " Stps: " + data.playersArr[i].steps + "/45 || Wllt: " + data.playersArr[i].wallet + "/1000 || Ttl: " + data.playersArr[i].total;
 
         if (data.playersArr[i].area === "mainArea" && data.playersArr[i].id === nickname) {
             const clientRender = new GridSystemClient(data.sendGridMatrix1);
